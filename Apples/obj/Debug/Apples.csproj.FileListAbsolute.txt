@@ -1,0 +1,16 @@
+C:\Users\Игорь\source\repos\Apples\Apples\bin\Debug\Apples.exe.config
+C:\Users\Игорь\source\repos\Apples\Apples\bin\Debug\Apples.exe
+C:\Users\Игорь\source\repos\Apples\Apples\bin\Debug\Apples.pdb
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.csprojAssemblyReference.cache
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\MainMenu.g.cs
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\MainWindow.g.cs
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\App.g.cs
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples_MarkupCompile.cache
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples_MarkupCompile.lref
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\MainMenu.baml
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\MainWindow.baml
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.g.resources
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.Properties.Resources.resources
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.csproj.GenerateResource.cache
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.exe
+C:\Users\Игорь\source\repos\Apples\Apples\obj\Debug\Apples.pdb

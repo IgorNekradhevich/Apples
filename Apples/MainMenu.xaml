@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MainMenu" Closing="Window_Closing" Height="190" Width="260">
     <StackPanel>
-        <Button Click="Button_Click_1" Margin="70,50,70,0">Новая игра</Button>
+        <Label HorizontalAlignment="Center">IP Адрес</Label>
+        <TextBox Margin="70,0,70,0" x:Name="TBIP">127.0.0.1</TextBox>
+        <Label HorizontalAlignment="Center">Порт</Label>
+        <TextBox Margin="70,0,70,0" x:Name="TBPort">8888</TextBox>
+        
+        <Button Click="Button_Click_1" Margin="70,10,70,0">Новая игра</Button>
         <Button Click="Button_Click" Margin="70,10,70,0">Выход</Button>
     </StackPanel>
 </Window>

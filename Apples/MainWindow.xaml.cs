@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Net.Sockets;
 
 namespace Apples
 {
@@ -26,18 +27,16 @@ namespace Apples
         int dragIndex=-2;
         bool isPlayng = false;
         MediaPlayer player;
-
+        TcpClient client;
+        public static string Ip { private get; set; }
+        public static string Port { private get;  set; }
         public MainWindow()
         {
             InitializeComponent();
             MainMenu menu = new MainMenu();
             menu.ShowDialog();
+            client = new TcpClient(Ip, Convert.ToInt32 (Port));
 
-            player = new MediaPlayer();
-            Uri uri = new Uri("c:\\1\\applevoice.mp3");
-
-            player.Open(uri);
-            player.Volume = 1;
 
             invent = new List<Invent>();
             apples = new List<Apple>();
@@ -56,6 +55,19 @@ namespace Apples
             invent.Add(new Invent(Im6, La6));
             invent.Add(new Invent(Im7, La7));
             invent.Add(new Invent(Im8, La8));
+
+            Task.Factory.StartNew(() => { ServerListner(); });
+          /*  NetworkStream network = client.GetStream();
+            byte[] buffer = Encoding.UTF8.GetBytes("TEST");
+            network.Write(buffer, 0, buffer.Length);*/
+
+            player = new MediaPlayer();
+            Uri uri = new Uri("c:\\1\\applevoice.mp3");
+
+            player.Open(uri);
+            player.Volume = 1;
+
+
 
             player.MediaEnded += playerEnded;
             
@@ -89,6 +101,34 @@ namespace Apples
             Show(index);
             
         }
+
+        void ServerListner()
+        {
+            NetworkStream networkStream = client.GetStream();
+            while (true)
+            {
+
+                try
+                {
+                    byte[] buffer = new byte[50];//e3
+                    networkStream.Read(buffer, 0, 50);
+                    string message = Encoding.UTF8.GetString(buffer);
+                    string[] appleCount = message.Split('|');
+                    for (int i = 0; i < 9; i++)
+                    {
+                        apples[i].Count = Convert.ToInt32(appleCount[i]);
+                        Dispatcher.Invoke(() => { Show(i);}) ;
+                    }
+                    
+                    Console.WriteLine(appleCount[8]);
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
+            }
+        }
+
 
         void Show (int index)
         {

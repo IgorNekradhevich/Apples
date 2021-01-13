@@ -20,6 +20,7 @@ namespace Apples
     public partial class MainMenu : Window
     {
         bool _closing = true;
+
         public MainMenu()
         {
             InitializeComponent();
@@ -33,6 +34,8 @@ namespace Apples
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             _closing = false;
+            MainWindow.Ip = TBIP.Text;
+            MainWindow.Port = TBPort.Text;
             Close();
         }
 

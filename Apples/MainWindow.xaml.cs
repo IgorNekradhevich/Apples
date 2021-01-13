@@ -97,6 +97,9 @@ namespace Apples
                 }
                 Show(dragIndex);
             }
+
+
+
             dragIndex = -2;
             Show(index);
             
@@ -107,11 +110,10 @@ namespace Apples
             NetworkStream networkStream = client.GetStream();
             while (true)
             {
-
                 try
                 {
-                    byte[] buffer = new byte[50];//e3
-                    networkStream.Read(buffer, 0, 50);
+                    byte[] buffer = new byte[250];//e3
+                    networkStream.Read(buffer, 0, 250);
                     string message = Encoding.UTF8.GetString(buffer);
                     string[] appleCount = message.Split('|');
                     for (int i = 0; i < 9; i++)
